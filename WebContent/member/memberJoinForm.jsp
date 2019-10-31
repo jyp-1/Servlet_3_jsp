@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<%@ include file="../layout/nav.jsp" %>
 
 		<div class="container">
   					<h2>Member Join Form</h2>
@@ -23,27 +24,27 @@
   		
     		<div class="id">
       			<label for="id">ID:</label>
-      			<input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">
+      			<input type="text" required="required" class="form-control" id="id" placeholder="Enter ID" name="id">
     		</div><br>
     		
     		<div class="pw">
       			<label for="pw">PW:</label>
-      			<input type="text" class="form-control" id="pw" placeholder="Enter PW" name="pw">
+      			<input type="password" required="required" class="form-control" id="pw" placeholder="Enter PW" name="pw">
     		</div><br>
     		
     		<div class="name">
       			<label for="name">name:</label>
-      			<input type="text" class="form-control" id="name" placeholder="Enter NAME" name="name">
+      			<input type="text" required="required" class="form-control"  id="name" placeholder="Enter NAME" name="name">
     		</div><br>
     		
     		<div class="email">
       			<label for="email">E-mail:</label>
-      			<input type="text" class="form-control" id="email" placeholder="Enter E-mail" name="email">
+      			<input type="email" required="required" class="form-control" id="email" placeholder="Enter E-mail" name="email">
     		</div><br>
     		
     		<div class="phone">
       			<label for="phone">Phone:</label>
-      			<input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+      			<input type="tel" required="required" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
     		</div><br>
     		
     		
