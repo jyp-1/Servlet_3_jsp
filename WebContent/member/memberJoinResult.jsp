@@ -1,3 +1,4 @@
+
 <%@page import="com.jy.member.MemberDAO"%>
 <%@page import="com.jy.member.MemberDTO"%>
 <%@page import="java.sql.Connection"%>
@@ -26,7 +27,22 @@
 	
 	con.close();
  
+	String message = "회원가입 실패";
+	if(result>0){
+		message="회원가입 성공";
+	}
 	
+	if(result==0){
+		request.setAttribute("msg", message);
+		request.setAttribute("path", "../index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
+		
+		
+	}else{
+		
+		response.sendRedirect("../index.jsp");
+	}
 
 
 
