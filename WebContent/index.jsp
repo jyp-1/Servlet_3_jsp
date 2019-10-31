@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-		<a href="./point/pointList.jsp">Point List</a>
+		<!-- <a href="./point/pointList.jsp">Point List</a> -->
+		
 
 </body>
 </html>
