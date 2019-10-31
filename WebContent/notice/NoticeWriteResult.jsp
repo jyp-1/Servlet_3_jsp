@@ -31,12 +31,12 @@
 	}
 	
 	if(result==0){
-		response.sendRedirect("./noticeList.jsp");
+		request.setAttribute("msg", message);
+		request.setAttribute("path", "./noticeList.jsp" );
+		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
 	}else{
-	request.setAttribute("msg", message);
-	request.setAttribute("path", "./noticeList.jsp" );
-	RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
-	view.forward(request, response);
+		response.sendRedirect("./noticeList.jsp");
 	}
 	
 	

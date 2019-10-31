@@ -8,7 +8,7 @@
 </head>
 <body>
 		<!-- <a href="./point/pointList.jsp">Point List</a> -->
-		
+		<h1>INDEX</h1>
 
 </body>
 </html>

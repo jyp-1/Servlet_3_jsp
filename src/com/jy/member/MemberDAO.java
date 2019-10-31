@@ -18,6 +18,7 @@ public class MemberDAO {
 			st.setString(4, memberDTO.getEmail());
 			st.setString(5, memberDTO.getPhone());
 			
+			result =st.executeUpdate();
 			
 			st.close();
 			con.close();

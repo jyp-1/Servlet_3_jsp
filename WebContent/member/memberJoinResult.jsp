@@ -18,7 +18,7 @@
 	memberDTO.setName(request.getParameter("name"));
 	memberDTO.setEmail(request.getParameter("email"));
 	memberDTO.setPhone(request.getParameter("phone"));
-	memberDTO.setGrade(Integer.parseInt(request.getParameter("grade")));
+	
 	
 	MemberDAO memberDAO = new MemberDAO();
 	Connection con = DBConnetor.getConnection();	
@@ -27,21 +27,18 @@
 	
 	con.close();
  
-	String message = "회원가입 실패";
-	if(result>0){
-		message="회원가입 성공";
-	}
 	
-	if(result==0){
-		request.setAttribute("msg", message);
+	String msg = "회원가입 성공";
+	if(result>0){
+		
+		request.setAttribute("msg", msg);
 		request.setAttribute("path", "../index.jsp");
 		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
 		view.forward(request, response);
 		
-		
 	}else{
-		
 		response.sendRedirect("../index.jsp");
+		
 	}
 
 
