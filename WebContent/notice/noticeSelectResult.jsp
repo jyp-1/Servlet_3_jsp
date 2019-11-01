@@ -88,7 +88,7 @@ body{
 </head>
 <body>
 	
-		
+		<%@ include file="../layout/nav.jsp" %>	
 		<div class="container">
   			<div>
     			<h1 class="n1">Notice Select Result Page</h1>  
@@ -118,8 +118,12 @@ body{
   			</div>
   			<br>
   			<div>
+  			
+  			<%if(memberDTO !=null && memberDTO.getId().equals(noticeDTO.getWriter())){ %>
   				<a class="btn btn-danger" href="./noticeUpdate.jsp?num=<%=noticeDTO.getNum() %>">Update</a>
   				<a href="./noticeDeleteResult.jsp?num=<%=noticeDTO.getNum() %>" class= "btn btn-primary">Delete</a>
+  				<%} %>
+  				
   				<a href="./noticeList.jsp" class="btn btn-warning">GO List</a>
   			</div>
  			  

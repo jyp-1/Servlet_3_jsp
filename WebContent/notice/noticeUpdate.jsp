@@ -36,6 +36,15 @@
 </head>
 <body>
 
+<%@ include file="../layout/nav.jsp" %>
+
+<% if(memberDTO ==null && memberDTO.getId() != noticeDTO.getWriter()){
+	request.setAttribute("msg", "권한 없음");
+	request.setAttribute("path", "../index.jsp");
+	RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+	view.forward(request, response);
+} %>
+
 
 	<div class="container">
   		

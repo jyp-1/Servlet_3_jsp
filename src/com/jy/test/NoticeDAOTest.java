@@ -13,10 +13,10 @@ import com.jy.utill.DBConnetor;
 
 public class NoticeDAOTest {
 
-	//@Test
+	@Test
 	public void noticeUpdateTest()throws Exception {
 		NoticeDTO noticeDTO = new NoticeDTO(); 
-		noticeDTO.setNum(200);
+		noticeDTO.setNum(44);
 		noticeDTO.setTitle("adad");
 		noticeDTO.setContents("ggg");
 		
@@ -63,7 +63,7 @@ public class NoticeDAOTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void noticeDeleteTest() throws Exception{
 		NoticeDAO noticeDAO = new NoticeDAO();
 		Connection con = DBConnetor.getConnection();

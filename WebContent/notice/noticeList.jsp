@@ -1,3 +1,4 @@
+<%@page import="com.jy.member.MemberDTO"%>
 <%@page import="com.jy.point.PointDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.jy.notice.NoticeDTO"%>
@@ -14,6 +15,25 @@
 	NoticeDAO noticeDAO = new NoticeDAO();
 	Connection con = DBConnetor.getConnection();
 	ArrayList<NoticeDTO> ar = noticeDAO.noticeList(con);
+	
+	con.close();
+	
+	//쿠키발행 
+	//쿠키 생성시 생성자에 키와 밸류 입력 
+	Cookie cookie = new Cookie("name","iu");
+	
+	//쿠키가 적용되는 path 설정: 보통 context path 적용 
+	cookie.setPath(request.getContextPath());
+	//쿠키의 유효시간 
+	//단위 초단위
+	//설정을 하지 않으면 웹브라우저가 종료되면 같이 종료 됨
+	cookie.setMaxAge(60*60);
+	
+	//쿠키를 클라이언트로 전송 
+	response.addCookie(cookie);
+
+	
+	
 %>    
     
 
@@ -96,7 +116,7 @@ body{
 <body>
 
 		
-		
+	<%@ include file="../layout/nav.jsp" %>	
    
   <div class="container">  
   <h1 class="n1">Notice List</h1>        
@@ -125,9 +145,11 @@ body{
     </tbody>
   </table>
   <br>
-  <a href="./noticeWrite.jsp" class="btn btn-default">Write</a>
   
-
+  <%if(memberDTO !=null && memberDTO.getGrade()==0){ %>
+  <a href="./noticeWrite.jsp" class="btn btn-default">Write</a>
+  <%}else{ %>
+  <%} %>
 </div>
 
 

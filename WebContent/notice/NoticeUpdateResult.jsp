@@ -22,15 +22,19 @@
 	
     con.close();
     
-    String message="Update Fail";
-    if(result>0){
-    	message="Update Success";
-    }
     
-    request.setAttribute("msg", message);
+    
+    
+    if(result>0){
+    	String message="Update Success";
+    	
+    }else{
+    request.setAttribute("msg", "UpdateFail");
     request.setAttribute("path", "./noticeList.jsp");
     RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
     view.forward(request, response);
+    }
+    
     
     %>
     

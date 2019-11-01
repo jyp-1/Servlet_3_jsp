@@ -1,5 +1,11 @@
+<%@page import="com.jy.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+  <%
+  		
+  %>  
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +22,15 @@
 
 </head>
 <body>
-
+		<%@ include file="../layout/nav.jsp" %>
+		<%
+			if(memberDTO ==null || memberDTO.getGrade() !=0){
+				request.setAttribute("msg", "안댐");
+				request.setAttribute("path", "../index.jsp");
+				RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+				view.forward(request, response);
+			}
+		%>
 			<div class="container">
   <h2>Notice Write Page</h2>
   		<form action="./NoticeWriteResult.jsp" method="post">
@@ -28,7 +42,7 @@
     		
     		<div class="writer">
       			<label for="writer">writer:</label>
-      			<input type="text" class="form-control" id="writer" placeholder="Enter writer" name="writer">
+      			<input type="text" class="form-control" value="<%=memberDTO.getId() %>" readonly="readonly" id="writer" placeholder="Enter writer" name="writer">
     		</div><br>
     		
     		<div class="contents">

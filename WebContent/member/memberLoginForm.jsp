@@ -1,5 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    	Cookie[] cookies = request.getCookies();
+    	String id ="";
+    	/* for(Cookie cookie : cookies){
+    		if(cookie.getName().equals("id")){
+    			id= cookie.getValue();
+    			break;
+    		}
+    	} */
+    	
+    	for(int i=0;i<cookies.length;i++){
+    		if(cookies[i].getName().equals("id")){
+    			id=cookies[i].getValue();
+    			break;
+    		}
+    	}
+    	
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,17 +35,17 @@
 
 <div class="container">
   <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
+  <form action="./memberLoginResult.jsp" method="post">
     <div class="form-group">
       <label for="id">ID:</label>
-      <input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">
+      <input type="text" class="form-control" value="<%=id%>" id="id" placeholder="Enter ID" name="id">
     </div>
     <div class="form-group">
       <label for="pw">Password:</label>
       <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
+      <label><input type="checkbox" name="remember" value="check" checked="checked"> Remember me</label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
