@@ -31,7 +31,7 @@
 			view.forward(request, response);
 		} %>
 		
-			
+<div class="container">		
 <h1> ID: <%= memberDTO.getId() %></h1>
 <h1> Name :<%= memberDTO.getName() %> </h1>
 <h1> Phone :<%= memberDTO.getPhone() %> </h1>
@@ -39,6 +39,6 @@
 <h1> Grade :<%= memberDTO.getGrade() %> </h1>
 <a href="./memberUpdateForm.jsp" class="btn btn-info">수정</a>
 <a href="./memberDelete.jsp" class="btn btn-info">탈퇴</a>
-
+</div>	
 </body>
 </html>
